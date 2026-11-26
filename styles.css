@@ -1,0 +1,202 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #eeeeee;
+}
+
+header {
+    background: #14365d;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+}
+
+main {
+    width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+}
+
+img {
+    width: 300px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+label {
+    display: block;
+}
+
+input,
+select,
+textarea {
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background: #14365d;
+    color: white;
+    padding: 5px;
+}
+
+footer {
+    width: 900px;
+    margin: auto;
+    font-size: 12px;
+}
+
+/* --- Improvements --- */
+
+/* Readability (WCAG 1.4.4) */
+body { font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.5; }
+footer { font-size: 1rem; }
+
+/* Responsive layout (WCAG 1.4.10 Reflow) */
+main, footer {
+    width: calc(100% - 40px);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+img { max-width: 100%; height: auto; }
+input, select, textarea { width: 100%; max-width: 400px; box-sizing: border-box; }
+
+/* Fix: checkboxes and radios were stretched to 400px */
+input[type="checkbox"], input[type="radio"] { width: auto; margin-right: 6px; }
+
+/* Visible keyboard focus (WCAG 2.4.7) */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #0b57d0;
+    outline-offset: 2px;
+}
+header a:focus-visible { outline-color: #ffffff; }
+
+/* Show current page, not by colour alone (WCAG 1.4.1) */
+nav a[aria-current="page"] { font-weight: bold; text-decoration: none; border-bottom: 3px solid white; }
+
+/* Table headers (matches the new <th> cells) */
+th, td { border: 1px solid #333; padding: 8px; text-align: left; }
+th { background: #e8eef5; }
+caption { font-weight: bold; text-align: left; margin-bottom: 5px; }
+
+/* Bigger, clearer button (Nielsen: aesthetic and minimalist design / match with real world) */
+button { font-size: 1rem; padding: 10px 20px; border: 0; cursor: pointer; }
+button:hover { background: #0d2744; }
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 10px; top: 10px; background: white; color: black; padding: 10px; z-index: 10; }
+
+/* --- Visual redesign (all colour pairs checked for WCAG AA contrast) --- */
+
+body { background: #f4f6f9; color: #222222; }
+h1, h2, h3 { color: #0b2545; }
+header h1 { color: #ffffff; }
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #0b2545, #13315c);
+    border-bottom: 6px solid #f2a900;
+    padding: 28px 20px;
+}
+header h1 { font-size: 2.2rem; letter-spacing: 0.5px; }
+
+/* Navigation as clear buttons */
+nav a {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover { background: rgba(255, 255, 255, 0.18); }
+nav a[aria-current="page"] {
+    background: #f2a900;
+    color: #0b2545;
+    border-bottom: 0;
+}
+
+/* Content area */
+main { border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+main a { color: #0b4f9c; }
+
+/* Car listings as cards */
+#cars + div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+#cars + div > div {
+    border: 1px solid #c7d0dc;
+    border-radius: 8px;
+    padding: 15px;
+    background: #ffffff;
+}
+#cars + div img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+#cars + div > div > div { font-size: 1.4rem; font-weight: bold; color: #0b2545; }
+#cars + div a {
+    display: inline-block;
+    background: #0b4f9c;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+#cars + div a:hover { background: #083a73; }
+
+/* Form fields and button */
+input, select, textarea {
+    border: 2px solid #5a6b82;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 1rem;
+}
+input[type="checkbox"], input[type="radio"] { padding: 0; }
+button { background: #f2a900; color: #0b2545; font-weight: bold; border-radius: 6px; }
+button:hover { background: #ffc533; }
+
+/* Footer */
+footer {
+    background: #0b2545;
+    color: #ffffff;
+    width: 100%;
+    max-width: none;
+    margin: 30px 0 0;
+    padding: 24px 20px;
+    box-sizing: border-box;
+}
+footer a { color: #ffffff; }
